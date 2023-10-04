@@ -1,5 +1,7 @@
 # Node Project Three - Authentication
 
+[abdidakir qulle](https://github.com/Daadaa33)
+
 In this project, you will build API for a bookstore and use Prisma with Supabase.
 
 In this project, you will be building a backend application for a bookstore. They want us to create for them a way to add books in their database and manage the information of their bookstore. The books will have authors.

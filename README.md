@@ -1,4 +1,4 @@
-# node js assiment gabi school
+# node js assignment gabi school
 
 
 asc , waxaan ka shaqeenayay assignmentiga node js oo linkigiisa hoos idin dhigi doono , waxaa rajaynaa inaad ka heli doon
@@ -43,8 +43,9 @@ ka dib database ka waxaan ku deploy gareeyay supabase
 
 # bookstore 
 * [ ] si aad u hesho dhamaan bookstore isticmaal `/api/bookstore`
-* [ ] si aad ugu soo darto new bookstore isticmaal `/api/bookstore` and isticmaal access token , waxaan muhiim ah inaad body laga helo `onwerId` ,`name`, `location`
-* [ ] si aad u update gareeso bookstore waxaa qasab ah in lagaa helo `name`
+* [ ] si aad ugu soo darto new bookstore waxan qasab ah in aad token aad is ticmaasho 
+* [ ] waxaan muhiim ah inaad body laga helo `onwerId` ,`name`, `location`
+* [ ] si aad u update gareeso bookstore waxaa qasab ah in lagaa helo `onwerId` ,`name`, `location`
 * [ ] si aad u delete gareeso bookstore waa in booga aad delete gareenayso id giisa uu yahay mid saxan  
 
 # book 

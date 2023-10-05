@@ -12,7 +12,7 @@ const authenticate = (req, res, next) => {
             SECRET_KEY,
             (err, decode) => {
                 if(err){
-                    res.status(401).json({message : "invalid token middleware"})
+                    res.status(401).json({message : "fadlan geli token si aan kuugu fasaxno inaad isticmaasho"})
                 }else{
                     req.decode = decode
                     next()
@@ -20,7 +20,7 @@ const authenticate = (req, res, next) => {
                 
             })
     }else {
-        res.status(401).json({message : "invalid credentials with middleware"})
+        res.status(401).json({message : "token ma ahan mid jiro waa inaad token saxan gelisaa"})
     }
 }
 

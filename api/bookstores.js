@@ -7,7 +7,7 @@ import authenticate from './middleware/authenticate.js';
 const router = express.Router();
 
 // get all bookstore
-router.get('/',  async(req, res)=> {
+router.get('/', authenticate, async(req, res)=> {
     try{
         const bookStore = await prisma.bookStore.findMany()
         if(!bookStore){
@@ -20,7 +20,7 @@ router.get('/',  async(req, res)=> {
 });
 
 // get single bookstore by id 
-router.get('/:id', async(req, res) => {
+router.get('/:id', authenticate, async(req, res) => {
     try{
         const bookstore = await prisma.bookStore.findUnique({
             where : {
@@ -37,7 +37,7 @@ router.get('/:id', async(req, res) => {
     }
 })
 // get ownerId by id
-router.get("/owner/:id" , async (req, res) => {
+router.get("/owner/:id" , authenticate, async (req, res) => {
     try{
         const bookStore = await prisma.bookStore.findMany({
           where: {
@@ -66,13 +66,12 @@ router.post('/', authenticate ,async(req, res)=> {
             res.status(404).json({message :"bookstore not working on adding" })
         }   
     }catch(error){
-        res.status(500).json({message : "faild to add bookstore"})
+        res.status(500).json({message : "faild to add bookstore",error : error.message})
     }
 });
 
 
 // update bookstore
-
 router.put("/", authenticate , async (req, res) =>{
     try{
         const bookstore = await prisma.bookStore.update({

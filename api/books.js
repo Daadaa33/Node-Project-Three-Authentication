@@ -1,10 +1,13 @@
 // Create endpoints for books, make sure to use the middleware to authenticate the token
 import express from 'express';
 import prisma from './lib/index.js';
+import authenticate from './middleware/authenticate.js';
+
 
 const router = express.Router();
 
-router.get('/',  async (req, res)=> {
+// get all books
+router.get('/', authenticate, async (req, res)=> {
     try{
         const books = await prisma.book.findMany()
 
@@ -18,7 +21,8 @@ router.get('/',  async (req, res)=> {
     }
 });
 
-router.post('/', async(req, res) => {
+// add new book
+router.post('/',authenticate, async(req, res) => {
     const body = req.body;
     try {
         // const books = await prisma.book.findUnique({ data : body})
@@ -34,7 +38,7 @@ router.post('/', async(req, res) => {
     })
 
 // update book
-router.put('/' ,async (req, res) =>{
+router.put('/' , authenticate ,async (req, res) =>{
     try{
         const books = await prisma.book.update({
             where :{
@@ -54,7 +58,7 @@ router.put('/' ,async (req, res) =>{
 
 
 // Delete restaurant
-router.delete('/:id',  async (req, res) => {
+router.delete('/:id', authenticate, async (req, res) => {
     try {
         const restaurant = await prisma.owner.delete({
             where: {

@@ -4,13 +4,14 @@ import express from 'express';
 import prisma from './lib/index.js';
 import bcrypt from "bcrypt"
 import Jwt  from 'jsonwebtoken';
+import authenticate from './middleware/authenticate.js';
 
 
 const router = express.Router();
 const SECRET_KEY = process.env.SECRET_KEY
 
 // read all owners 
-router.get('/', async (req, res) => {
+router.get('/', authenticate , async (req, res) => {
     const owners = await prisma.owner.findMany()
     res.status(200).json(owners)
 })

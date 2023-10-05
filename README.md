@@ -7,7 +7,7 @@ wax walbo oo aad ugu baahantahy codekan hoos ayaad ka heli.
 
 
 #### linkiga code  
-`https://bookstore-backend-u6qy.onrender.com`
+https://bookstore-backend-u6qy.onrender.com...
 
 ## Set Up The Project With Git
 
@@ -67,4 +67,4 @@ ka dib database ka waxaan ku deploy gareeyay supabase
 # middleware and authorization
 * [ ] si aad u hubiso in uu shaqeenaayo middlewareka iyo authorization `bookstore ` iyo `author` iyo `books` isticmaal token la'aan  waxuu ku waydiin doonaa inaad token ka
 
-      MAHDSANID ....
+      MAHDSANID 

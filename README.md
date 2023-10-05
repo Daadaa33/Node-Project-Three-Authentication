@@ -1,10 +1,13 @@
-# Node Project Three - Authentication
+# node js assiment gabi school
 
-[abdidakir qulle](https://github.com/Daadaa33)
 
-In this project, you will build API for a bookstore and use Prisma with Supabase.
+asc , waxaan ka shaqeenayay assignmentiga node js oo linkigiisa hoos idin dhigi doono , waxaa rajaynaa inaad ka heli doon
+wax walbo oo aad ugu baahantahy codekan hoos ayaad ka heli.
+[linkiga assigment](https://www.youtube.com/watch?v=6Yv-uLJOluo)
 
-In this project, you will be building a backend application for a bookstore. They want us to create for them a way to add books in their database and manage the information of their bookstore. The books will have authors.
+
+#### linkiga code  
+`https://bookstore-backend-u6qy.onrender.com`
 
 ## Set Up The Project With Git
 
@@ -16,68 +19,51 @@ In this project, you will be building a backend application for a bookstore. The
 * [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
 * [ ] Push commits: git push origin `<firstName-lastName>`.
 
-
-### Minimum Viable Product
-
 #### Setup
 
-After cloning, Run `npm install`
+ka dib markaas clone greeso  Run this code `npm install`
 
- Your prisma has already some schema, you will need to change the `datasource db` inside your `prisma.schema` file to:
 
- ```
- datasource db {
-  provider          = "postgresql"
-  url               = env("DATABASE_URL")
-}
- ```
-
-You will need to go ahead and create your model for `owner`
-
-Make sure your models and fields follow this instruction:
-
+### prisma files ku jiro 
 1. bookstore - fields: id, ownerId, name, location, created, updated
 2. author - fields: id, name, created, updated.
 3. book - fields: id, authorId, bookstoreId, title, price, image, created, updated.
 4. owner - fields: id, name, email, password, created, updated
 
-You will also need to copy the code from your last project to complete this project.
+# authorization
+waxaan sameeyay `owner` , oo aan u sameeyay singup iyo login anigoo isticmaalaya `bcrypt` oo aan hash password ka istcmaalay iyo `jwt` oon aan token ahaan u isticmaalay
 
-#### Add authentication
+ka dib database ka waxaan ku deploy gareeyay supabase 
 
-In the `owner` file, add sign-up and login endpoints. The sign-up endpoint should create account for the owner and create a hashed password with `bcrypt` and store the information in the `Supabase` database.
-
-The login endpoint should generate a token you can for the frontend and to authenticate the current user. Use `JSON Web Tokens` or `JWT`.
-
-#### Add Middleware
-
-In the `middleware` folder, add a method to check if the user is authenticated. Use this method to check if user is logged in when making changes to the bookstore.
-
-#### Use Supabase database
-
-Instead of using SQLite database, change to Supabase by following this instruction:
-
-1. Sign up at supabase.com
-2. Create new project
-3. Inside the project you created, go to `Settings` and then click `Databases`
-4. Under `Connection string`, switch to `url` and copy the link.
-5. Create `.env` file in your project's root directory if you already don't have it.
-6. Add `DATABASE_URL='the url you copied'` in the .env file.
-7. Inside `prisma` folder, you will have `prisma.schema` file, change the `datasource` to
-
- ```
- datasource db {
-  provider          = "postgresql"
-  url               = env("DATABASE_URL")
-}
- ```
+# owner
+* [ ] si aad u hesho waxa ku jiro owners is ticmaalo `/api/owner`
+* [ ] si aad u sameesato new onwer is ticmaal `/api/owner/singup` waxaana muhiim ah inaad geliso `name`, `email`, `password` `
+* [ ] si aad u login gareeso ownerka aad sameesay is ticmaal `api/owner/login` ka dibna gali `email address`, iyo `password`
 
 
-#### Delete what you don't need.
+# bookstore 
+* [ ] si aad u hesho dhamaan bookstore isticmaal `/api/bookstore`
+* [ ] si aad ugu soo darto new bookstore isticmaal `/api/bookstore` and isticmaal access token , waxaan muhiim ah inaad body laga helo `onwerId` ,`name`, `location`
+* [ ] si aad u update gareeso bookstore waxaa qasab ah in lagaa helo `name`
+* [ ] si aad u delete gareeso bookstore waa in booga aad delete gareenayso id giisa uu yahay mid saxan  
 
-Delete files such as the `SQLite` database, migrations and other files you don't need before pushing.
+# book 
+* [ ] si aad u hesho dhamaan books ka is ticmaal endpoint ah `/api/books`
+* [ ] waxaa qasab ah in mar walbo aad isticmaasho token lagaama yeeli doono token la'aan inaad wax ka badasho books
+* [ ] si aad u update gareeso book waxaa qasab ah in body gaaga laga helo `authorId` , `bookstoreId` , `title`, `price` ,`image`
+* [ ] si aad u delete gareeso book waa in booga aad delete gareenayso id giisa uu yahay mid saxan
+      
 
-### Stretch Goals
 
-- Add a validation library such as `Zod` to validate the schema before adding anything to the database.
-- Create roles where the owner can add, update, delete everything but other users can only add or edit.
+# author 
+* [ ] si aad u hesho dhamaan author istcmaal endpoint `/api/author`
+* [ ]  waxaa qasab ah in mar walbo aad isticmaasho token lagaama yeeli doono token la'aan inaad wax ka badasho author
+* [ ]  si aad ugu soo darto author cusub waa in body laga helo `name`
+* [ ] si aad u update gareeso author waxaa qasab ah in body gaaga laga helo `name` 
+* [ ] si aad u delete gareeso author waa in booga aad delete gareenayso id giisa uu yahay mid saxan
+
+
+# middleware and authorization
+* [ ] si aad u hubiso in uu shaqeenaayo middlewareka iyo authorization `bookstore ` iyo `author` iyo `books` isticmaal token la'aan  waxuu ku waydiin doonaa inaad token ka
+
+      MAHDSANID ....

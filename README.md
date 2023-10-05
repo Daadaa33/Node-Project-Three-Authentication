@@ -7,7 +7,7 @@ wax walbo oo aad ugu baahantahy codekan hoos ayaad ka heli.
 
 
 #### linkiga code  
-      https://bookstore-backend-u6qy.onrender.com ....
+      https://bookstore-backend-u6qy.onrender.com 
 
 ## Set Up The Project With Git
 

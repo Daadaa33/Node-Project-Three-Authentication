@@ -13,8 +13,9 @@ server.use('/api/author', authorRouter)
 server.use('/api/owner', ownerRouter)
 
 
-server.get('/', (res, req) => {
+server.get('/', (req, res) => {
     console.log("welcome to bookstore backend")
+    res.status(200).json({message : "welcome to bookstore backend"})
 })
 
 export default server;

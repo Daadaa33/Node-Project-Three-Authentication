@@ -79,7 +79,7 @@ router.put('/:id', authenticate, async(req, res) => {
     try{
         const author = await prisma.author.update({
             where :{
-                id : Number(req.body.id)                
+                id : Number(req.params.id)                
                },
                data : req.body
            })
@@ -89,7 +89,7 @@ router.put('/:id', authenticate, async(req, res) => {
                res.status(404).json({message : "author not found"})
            }
     }catch(error){
-        res.status(500).json({message : "failed to update authenticate"})
+        res.status(500).json({message : "failed to update author"})
     }
 })
 
